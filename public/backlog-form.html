@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12304a">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.svg" type="image/svg+xml">
+  <title>Input Backlog | TYRE BACKLOG TCM</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/common.js" defer></script>
+  <script src="/js/backlog.js" defer></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar"><a class="brand" href="/dashboard-field.html"><img class="brand-mark small brand-logo" src="/images/tyre-logo.png" alt="Logo Tyre Section"><span>TYRE BACKLOG<small>TCM · TYRE SECTION</small></span></a><p class="nav-label">MENU UTAMA</p><nav><a class="nav-link" href="/dashboard-field.html"><span>▦</span> Dashboard</a><a class="nav-link active" href="/backlog-form.html"><span>＋</span> Input Tyre Backlog</a></nav><div class="sidebar-bottom"><div class="user-mini"><span class="avatar" id="userAvatar">U</span><span id="userName">Pengguna</span></div><button class="nav-link logout-button" data-logout><span>↪</span> Keluar</button></div></aside>
+    <main class="main-area">
+      <header class="topbar"><div><p class="eyebrow">AREA KERJA / INPUT DATA</p><h1 id="pageTitle">Input Tyre Backlog</h1></div><span class="role-pill">TEAM LAPANGAN</span></header>
+      <section class="panel form-panel">
+        <div class="panel-heading"><div><p class="eyebrow">FORMULIR TEMUAN</p><h2>Informasi backlog tyre</h2><p class="muted">Lengkapi informasi dan lampirkan foto luka tyre.</p></div><span class="required-note">* Wajib diisi</span></div>
+        <form id="backlogForm" enctype="multipart/form-data">
+          <div class="form-grid">
+            <label>Serial Number <span>*</span><input name="serialNumber" required maxlength="100" placeholder="Masukkan serial number tyre"></label>
+            <label>Unit <span>*</span><input name="unit" required maxlength="100" placeholder="Contoh: HD 465 / DT-01"></label>
+            <label>Manpower<input name="manpower" maxlength="200" placeholder="Masukkan nama atau jumlah manpower"></label>
+            <label>HM Unit<input name="hmUnit" maxlength="50" placeholder="Masukkan HM unit"></label>
+            <label>Tanggal dan waktu input <span>*</span><input name="inputDateTime" type="datetime-local" required></label>
+            <label class="wide">Remarks / Keterangan luka <span>*</span><textarea name="remarks" rows="4" maxlength="2000" required placeholder="Jelaskan lokasi dan kondisi luka tyre secara singkat"></textarea></label>
+            <div class="wide photo-field">
+              <label for="photos">Foto luka tyre <span>*</span></label>
+              <p class="muted small-text">Format JPG, PNG, WEBP. Maksimal 8 MB per foto dan 5 foto per laporan.</p>
+              <input id="photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" multiple>
+              <div id="existingPhotos" class="photo-preview"></div>
+              <div id="photoPreview" class="photo-preview"></div>
+            </div>
+          </div>
+          <div class="form-actions"><a class="button outline" href="/dashboard-field.html">Kembali ke Dashboard</a><button class="button outline" id="resetForm" type="reset">Reset Form</button><button class="button primary" id="saveButton" type="submit">Simpan Backlog</button></div>
+        </form>
+      </section>
+      <footer class="footer-note">Pastikan foto jelas dan keterangan sesuai kondisi tyre di lapangan.</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

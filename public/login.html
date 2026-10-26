@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12304a">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.svg" type="image/svg+xml">
+  <title>Masuk | TYRE BACKLOG TCM</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/common.js" defer></script>
+  <script src="/js/login.js" defer></script>
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-brand">
+      <img class="login-logo" src="/images/tyre-logo.png" alt="Logo Tyre Section">
+      <p class="eyebrow">TYRE SECTION · OPERASIONAL</p>
+      <h1>TYRE BACKLOG <span>TCM</span></h1>
+      <p class="login-intro">Pencatatan dan pemantauan backlog tyre untuk mendukung keselamatan serta keandalan unit.</p>
+      <div class="safety-tag">● &nbsp; SISTEM OPERASIONAL</div>
+    </section>
+    <section class="login-card">
+      <h2>Selamat datang</h2>
+      <p class="muted">Masuk menggunakan akun yang telah diberikan.</p>
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" required maxlength="80">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="200">
+        <p id="loginError" class="form-error" role="alert" hidden></p>
+        <button class="button primary full-width" type="submit">Masuk ke Aplikasi <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="login-footnote">Akses hanya untuk tyreman.</p>
+    </section>
+  </main>
+  
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

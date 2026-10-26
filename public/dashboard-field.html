@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12304a">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.svg" type="image/svg+xml">
+  <title>Dashboard Lapangan | TYRE BACKLOG TCM</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/common.js" defer></script>
+  <script src="/js/field.js" defer></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a class="brand" href="/dashboard-field.html"><img class="brand-mark small brand-logo" src="/images/tyre-logo.png" alt="Logo Tyre Section"><span>TYRE BACKLOG<small>TCM · TYRE SECTION</small></span></a>
+      <p class="nav-label">MENU UTAMA</p>
+      <nav><a class="nav-link active" href="/dashboard-field.html"><span>▦</span> Dashboard</a><a class="nav-link" href="/backlog-form.html"><span>＋</span> Input Tyre Backlog</a></nav>
+      <div class="sidebar-bottom"><div class="user-mini"><span class="avatar" id="userAvatar">U</span><span id="userName">Pengguna</span></div><button class="nav-link logout-button" data-logout><span>↪</span> Keluar</button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div><p class="eyebrow">AREA KERJA / TEAM LAPANGAN</p><h1>Dashboard</h1></div><span class="role-pill">TEAM LAPANGAN</span></header>
+      <section class="welcome-panel"><div><p class="eyebrow">PENCATATAN TYRE</p><h2>Halo, <span id="welcomeName">Pengguna</span></h2><p>Catat temuan tyre dengan lengkap agar tindak lanjut backlog lebih cepat.</p></div><a class="button yellow" href="/backlog-form.html">＋ Input Tyre Backlog</a></section>
+      <section class="stat-grid one-stat"><article class="stat-card"><span class="stat-icon">▤</span><div><p>Total backlog saya</p><strong id="totalBacklogs">—</strong></div></article></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">AKTIVITAS ANDA</p><h2>Riwayat input backlog</h2></div><a class="text-link" href="/backlog-form.html">＋ Input baru</a></div>
+        <div class="table-wrap"><table><thead><tr><th>Tanggal / Waktu</th><th>Serial Number</th><th>Unit</th><th>Remarks</th><th>Foto</th><th>Aksi</th></tr></thead><tbody id="backlogRows"></tbody></table></div>
+        <div id="emptyState" class="empty-state" hidden><span>▤</span><p>Belum ada backlog yang diinput.</p><a class="button outline" href="/backlog-form.html">Mulai input backlog</a></div>
+        <div id="pagination" class="pagination"></div>
+      </section>
+      <footer class="footer-note">TYRE BACKLOG TCM · Kelola temuan tyre dengan akurat.</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

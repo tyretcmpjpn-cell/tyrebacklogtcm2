@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12304a">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.svg" type="image/svg+xml">
+  <title>Detail Backlog | TYRE BACKLOG TCM</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/common.js" defer></script>
+  <script src="/js/detail.js" defer></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar"><a class="brand" href="/"><img class="brand-mark small brand-logo" src="/images/tyre-logo.png" alt="Logo Tyre Section"><span>TYRE BACKLOG<small>TCM · TYRE SECTION</small></span></a><p class="nav-label">NAVIGASI</p><nav><a class="nav-link" id="dashboardLink" href="/dashboard-field.html"><span>▦</span> Dashboard</a></nav><div class="sidebar-bottom"><div class="user-mini"><span class="avatar" id="userAvatar">U</span><span id="userName">Pengguna</span></div><button class="nav-link logout-button" data-logout><span>↪</span> Keluar</button></div></aside>
+    <main class="main-area">
+      <header class="topbar"><div><p class="eyebrow">LAPORAN / DETAIL</p><h1>Detail Backlog</h1></div><span class="role-pill" id="roleLabel"></span></header>
+      <section class="panel detail-panel"><div class="panel-heading"><div><p class="eyebrow">INFORMASI LAPORAN</p><h2 id="detailSerial">Memuat data...</h2></div><a class="button outline" id="editLink" hidden>Edit laporan</a></div>
+        <dl class="detail-grid"><div><dt>Serial Number</dt><dd id="serial"></dd></div><div><dt>Unit</dt><dd id="unit"></dd></div><div><dt>Manpower</dt><dd id="manpower"></dd></div><div><dt>HM Unit</dt><dd id="hmUnit"></dd></div><div><dt>Tanggal / Waktu Input</dt><dd id="inputTime"></dd></div><div><dt>Nama Penginput</dt><dd id="inputter"></dd></div><div class="wide"><dt>Remarks / Keterangan luka</dt><dd id="remarks"></dd></div><div><dt>Tanggal dibuat</dt><dd id="createdAt"></dd></div><div><dt>Terakhir diperbarui</dt><dd id="updatedAt"></dd></div></dl>
+        <div class="detail-photos"><h3>Foto luka tyre</h3><div id="photoGallery" class="photo-gallery"></div></div>
+        <div class="form-actions"><a class="button outline" id="backLink">Kembali</a></div>
+      </section>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12304a">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.svg" type="image/svg+xml">
+  <title>Dashboard Admin | TYRE BACKLOG TCM</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/common.js" defer></script>
+  <script src="/js/admin.js" defer></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a class="brand" href="/dashboard-admin.html"><img class="brand-mark small brand-logo" src="/images/tyre-logo.png" alt="Logo Tyre Section"><span>TYRE BACKLOG<small>TCM · TYRE SECTION</small></span></a>
+      <p class="nav-label">MENU UTAMA</p>
+      <nav><a class="nav-link active" href="/dashboard-admin.html"><span>▦</span> Dashboard Admin</a><a class="nav-link" href="#data-backlog"><span>▤</span> Semua Data Backlog</a></nav>
+      <div class="sidebar-bottom"><div class="user-mini"><span class="avatar" id="userAvatar">A</span><span id="userName">Administrator</span></div><button class="nav-link logout-button" data-logout><span>↪</span> Keluar</button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div><p class="eyebrow">AREA KERJA / ADMINISTRASI</p><h1>Dashboard Admin</h1></div><span class="role-pill admin-pill">TEAM ADMIN</span></header>
+      <section class="admin-intro"><div><p class="eyebrow">RINGKASAN OPERASIONAL</p><h2>Pemantauan Tyre Backlog</h2><p>Pantau laporan seluruh Team Lapangan dan ekspor data untuk tindak lanjut.</p></div><button class="button primary" id="downloadExcel">⇩ &nbsp; DOWNLOAD EXCEL</button></section>
+      <section class="stat-grid">
+        <article class="stat-card"><span class="stat-icon">▤</span><div><p>Total laporan backlog</p><strong id="statBacklogs">—</strong></div></article>
+        <article class="stat-card"><span class="stat-icon blue-icon">▣</span><div><p>Unit dengan backlog</p><strong id="statUnits">—</strong></div></article>
+        <article class="stat-card"><span class="stat-icon yellow-icon">◷</span><div><p>Laporan hari ini</p><strong id="statToday">—</strong></div></article>
+        <article class="stat-card"><span class="stat-icon green-icon">♙</span><div><p>Team Lapangan aktif</p><strong id="statUsers">—</strong></div></article>
+      </section>
+      <section class="panel filters-panel" id="data-backlog">
+        <div class="panel-heading"><div><p class="eyebrow">MONITORING LAPORAN</p><h2>Semua Data Backlog</h2></div><span class="result-count" id="resultCount"></span></div>
+        <form id="filterForm" class="filter-grid">
+          <label>Serial Number<input name="serialNumber" placeholder="Cari serial number"></label>
+          <label>Unit<input name="unit" placeholder="Cari unit"></label>
+          <label>Nama Penginput<input name="inputter" placeholder="Cari nama"></label>
+          <label>Tanggal awal<input name="from" type="date"></label>
+          <label>Tanggal akhir<input name="to" type="date"></label>
+          <div class="filter-actions"><button class="button primary" type="submit">Terapkan</button><button class="button outline" id="resetFilters" type="button">Reset</button></div>
+        </form>
+        <div class="table-wrap"><table><thead><tr><th>No</th><th>Tanggal / Waktu</th><th>Serial Number</th><th>Unit</th><th>Manpower</th><th>HM Unit</th><th>Remarks</th><th>Penginput</th><th>Foto</th><th>Aksi</th></tr></thead><tbody id="backlogRows"></tbody></table></div>
+        <div id="emptyState" class="empty-state" hidden><span>⌕</span><p>Tidak ada data backlog yang sesuai.</p></div>
+        <div id="pagination" class="pagination"></div>
+      </section>
+      <section class="panel user-panel">
+        <div class="panel-heading"><div><p class="eyebrow">AKSES PENGGUNA</p><h2>Buat akun Team Lapangan</h2></div></div>
+        <form id="userForm" class="user-form">
+          <label>Nama lengkap<input name="fullName" required minlength="2" maxlength="120"></label>
+          <label>Username<input name="username" required minlength="3" maxlength="80" autocomplete="off"></label>
+          <label>Password sementara<input name="password" type="password" required minlength="12" maxlength="200" autocomplete="new-password"><small>Minimal 12 karakter. Bagikan secara aman kepada pengguna.</small></label>
+          <button class="button primary" type="submit">＋ Buat akun</button>
+        </form>
+      </section>
+      <footer class="footer-note">TYRE BACKLOG TCM · Data operasional Tyre Section.</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

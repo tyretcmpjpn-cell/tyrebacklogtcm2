@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/
+uploads/tyre-backlog/*
+!uploads/tyre-backlog/.gitkeep
+npm-debug.log*
